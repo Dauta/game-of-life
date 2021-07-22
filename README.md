@@ -4,6 +4,10 @@ This is an implementation of [Conway's Game of Life](https://en.wikipedia.org/wi
 
 ![game of life preview](./preview.gif)
 
+### 😎 Try it out! 
+
+https://dauta.space/game-of-life/
+
 ### ⚡️ Quickstart
 
 - Clone this repository
@@ -14,6 +18,6 @@ This is an implementation of [Conway's Game of Life](https://en.wikipedia.org/wi
 - Enjoy! 
 - `yarn build` will produce a minified bundle.
 
-### Seed
+### 🥑 Seed
 
 Tweak the `seed` parameters and/or the `condition` and see the different patterns emerge. 
