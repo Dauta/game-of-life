@@ -4,8 +4,8 @@ import { populateGrid } from "./lib/populateGrid";
 import { tick } from "./lib/tick";
 
 const FRAME_RATE = 60;
-const CELL_SIZE = 2.5;
-const BACKGROUND_COLOR = "#3d3447";
+const CELL_SIZE = 3;
+const BACKGROUND_COLOR = "#0f4552";
 
 let grid: Cell[][] = [];
 let isLive = true;
@@ -28,7 +28,7 @@ const sketch = (ctx: P5) => {
   ctx.draw = () => {
     if (!isLive) return;
 
-    ctx.background("#3d3447");
+    ctx.background(BACKGROUND_COLOR);
 
     tick(grid, ctx);
     generation++;
