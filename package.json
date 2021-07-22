@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "esbuild ./src --outfile=public/dist/index.js --bundle --minify",
-    "watch": "esbuild --servedir=public --outfile=public/dist/index.js --bundle"
+    "watch": "esbuild --servedir=. --outfile=public/dist/index.js --bundle"
   },
   "devDependencies": {
     "@types/p5": "^1.3.0",
