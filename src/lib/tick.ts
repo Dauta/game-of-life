@@ -5,8 +5,8 @@ import { getNeighbours } from "./geNeighbours";
 export const tick = (grid: Cell[][], ctx: P5) => {
   grid.forEach((row) => {
     row.forEach((cell) => {
-      const numberlivingNeighbours = getNeighbours(grid, cell).filter(
-        (cell) => cell?.getState() === 1
+      const numberlivingNeighbours = getNeighbours(grid, cell).filter((cell) =>
+        cell?.getState()
       ).length;
 
       cell.setLiveNeighbours(numberlivingNeighbours);
@@ -15,21 +15,21 @@ export const tick = (grid: Cell[][], ctx: P5) => {
 
   grid.forEach((row) => {
     row.forEach((cell) => {
-      const state = cell.getState();
+      const isAlive = cell.getState();
       const numberLiveNeighbours = cell.getLiveNeighbours();
       // Any dead cell with three live neighbours becomes a live cell.
-      if (state === 0 && numberLiveNeighbours === 3) {
-        cell.setState(1);
+      if (!isAlive && numberLiveNeighbours === 3) {
+        cell.setState(true);
       }
       // Any live cell with two or three live neighbours survives
       else if (
-        state === 1 &&
+        isAlive &&
         !(numberLiveNeighbours === 2 || numberLiveNeighbours === 3)
       ) {
-        cell.setState(0);
+        cell.setState(false);
       }
-
-      if (cell.getState() === 1) {
+      // draw only live cells
+      if (cell.getState()) {
         cell.draw(ctx);
       }
     });

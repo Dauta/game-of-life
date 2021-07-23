@@ -1,21 +1,21 @@
 import P5 from "p5";
 
 export class Cell {
-  private state: 0 | 1;
+  private state: boolean;
   private numberLiveNeighbours: number;
 
   public constructor(
     private readonly position: { x: number; y: number },
     private readonly size: number
   ) {
-    this.state = 0;
+    this.state = false;
     this.numberLiveNeighbours = 0;
   }
 
   public draw(ctx: P5) {
     const alpha = (255 / 3) * this.numberLiveNeighbours;
     const color =
-      this.numberLiveNeighbours > 2 && this.state === 1
+      this.numberLiveNeighbours > 2 && this.state
         ? ctx.color("#fff")
         : ctx.color("#eeb63d");
 
@@ -37,7 +37,7 @@ export class Cell {
     return this.state;
   }
 
-  public setState(newState: 0 | 1) {
+  public setState(newState: boolean) {
     this.state = newState;
   }
 
