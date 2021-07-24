@@ -5,7 +5,7 @@ import { tick } from "./lib/tick";
 
 const FRAME_RATE = 60;
 const CELL_SIZE = 3;
-const BACKGROUND_COLOR = "#0f4552";
+const BACKGROUND_COLOR = "#443232";
 
 let grid: Cell[][] = [];
 let isLive = true;

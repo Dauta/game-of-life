@@ -16,12 +16,13 @@ export class Cell {
     const alpha = (255 / 3) * this.numberLiveNeighbours;
     const color =
       this.numberLiveNeighbours > 2 && this.state
-        ? ctx.color("#fff")
-        : ctx.color("#eeb63d");
-
+        ? ctx.color("#99ffa9")
+        : ctx.color("#48bb52");
     color.setAlpha(alpha);
+
     ctx.fill(color);
     ctx.noStroke();
+    ctx.smooth();
     ctx.square(
       this.position.x * this.size,
       this.position.y * this.size,
